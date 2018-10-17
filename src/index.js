@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 import { enableLiveReload } from 'electron-compile';
-
+import {dataCheck} from "./server/express.js";
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -18,7 +18,7 @@ const createWindow = async () => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.loadURL(`http://localhost:7550/OBReports`);
 
   // Open the DevTools.
   if (isDevMode) {
